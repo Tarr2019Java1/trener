@@ -1,0 +1,25 @@
+table.todoTable {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+table.todoTable td, table.todoTable th {
+    border-bottom: 1px solid #AAAAAA;
+    padding: 10px 10px;
+}
+table.todoTable tbody td {
+    font-size: 13px;
+}
+table.todoTable tfoot td {
+    font-size: 14px;
+}
+table.todoTable tfoot .links {
+    text-align: right;
+}
+table.todoTable tfoot .links a{
+    display: inline-block;
+    background: #1C6EA4;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
