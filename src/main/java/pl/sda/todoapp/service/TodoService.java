@@ -10,4 +10,6 @@ public interface TodoService {
     List<Todo> getAll();
 
     List<Todo> getAllCompleted();
+
+    Todo addTodo(String name);
 }

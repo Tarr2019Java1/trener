@@ -39,15 +39,16 @@
     </div>
 </header>
 
+<input type="text" class="form-control add-todo" placeholder="+ Dodaj zadanie" />
+
 <div class="row">
     <div class="col" style="padding: 15px">
         <h3>Zadania</h3>
 
-        <table class="todoTable">
+        <table class="todoTable" id="todos-table">
             <tbody>
             <tr th:each="todo: ${todos}">
                 <td th:text="${todo.name}" />
-                <td th:text="${todo.createDate}" />
             </tr>
             </tbody>
         </table>
@@ -82,6 +83,7 @@
 
 <!-- Custom JavaScript for this theme -->
 <script src="js/scrolling-nav.js"></script>
+<script src="js/todo.js"></script>
 
 </body>
 

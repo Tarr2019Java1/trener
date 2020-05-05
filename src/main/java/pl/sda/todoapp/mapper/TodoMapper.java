@@ -18,7 +18,7 @@ public class TodoMapper {
         TodoDto dto = new TodoDto(entity.getName());
         dto.setCreateDate(entity.getCreateDate());
         dto.setCloseDate(entity.getCloseDate());
-        return null;
+        return dto;
     }
 
     public static List<TodoDto> mapEntityToDto(List<Todo> entities) {

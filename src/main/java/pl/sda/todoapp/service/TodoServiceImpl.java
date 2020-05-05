@@ -27,4 +27,10 @@ public class TodoServiceImpl implements TodoService {
     public List<Todo> getAllCompleted() {
         return todoRepository.getAllByCompleted(true);
     }
+
+    @Override
+    public Todo addTodo(String name) {
+        Todo todo = new Todo(name, false);
+        return todoRepository.save(todo);
+    }
 }

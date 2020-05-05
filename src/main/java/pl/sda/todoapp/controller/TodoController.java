@@ -1,9 +1,13 @@
 package pl.sda.todoapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import pl.sda.todoapp.entity.Todo;
 import pl.sda.todoapp.generator.TodoDtoGenerator;
 import pl.sda.todoapp.mapper.TodoMapper;
@@ -31,6 +35,15 @@ public class TodoController {
         model.addAttribute("completed", completedDtos);
 
         return "todos";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/todos/{name}", method = RequestMethod.POST)
+    public String addTodos(@PathVariable("name") String name) {
+
+        Todo todo = todoService.addTodo(name);
+
+        return "200 OK";
     }
 
 }
