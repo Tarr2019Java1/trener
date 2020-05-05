@@ -42,10 +42,12 @@
 <div class="row">
     <div class="col" style="padding: 15px">
         <h3>Zadania</h3>
+
         <table class="todoTable">
             <tbody>
             <tr th:each="todo: ${todos}">
                 <td th:text="${todo.name}" />
+                <td th:text="${todo.createDate}" />
             </tr>
             </tbody>
         </table>
@@ -56,6 +58,7 @@
             <tbody>
             <tr th:each="todo: ${completed}">
                 <td th:text="${todo.name}" />
+                <td th:text="${todo.closeDate}" />
             </tr>
             </tbody>
         </table>
