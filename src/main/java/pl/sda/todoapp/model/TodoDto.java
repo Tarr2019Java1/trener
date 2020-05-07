@@ -4,10 +4,18 @@ import java.util.Date;
 
 public class TodoDto {
 
+    private long id;
     private String name;
-
-    private Date createDate;
+    private String createDate;
     private Date closeDate;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public TodoDto(String name) {
         this.name = name;
@@ -21,11 +29,11 @@ public class TodoDto {
         this.name = name;
     }
 
-    public Date getCreateDate() {
+    public String getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(String createDate) {
         this.createDate = createDate;
     }
 

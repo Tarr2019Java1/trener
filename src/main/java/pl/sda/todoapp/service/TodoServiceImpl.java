@@ -33,4 +33,14 @@ public class TodoServiceImpl implements TodoService {
         Todo todo = new Todo(name, false);
         return todoRepository.save(todo);
     }
+
+    @Override
+    public void completeTodo(Long id) {
+        Todo todo = todoRepository.getById(id);
+
+        if (todo != null) {
+            todo.setCompleted(true);
+            todoRepository.save(todo);
+        }
+    }
 }

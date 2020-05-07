@@ -3,6 +3,8 @@ package pl.sda.todoapp.mapper;
 import pl.sda.todoapp.entity.Todo;
 import pl.sda.todoapp.model.TodoDto;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +18,11 @@ public class TodoMapper {
     public static TodoDto mapEntityToDto(Todo entity) {
 
         TodoDto dto = new TodoDto(entity.getName());
-        dto.setCreateDate(entity.getCreateDate());
+        dto.setId(entity.getId());
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        dto.setCreateDate(dateFormat.format(entity.getCreateDate()));
         dto.setCloseDate(entity.getCloseDate());
         return dto;
     }

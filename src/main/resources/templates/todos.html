@@ -34,8 +34,8 @@
 
 <header class="bg-primary text-white">
     <div class="container text-center">
-        <p class="lead">Aplikacja do zarządzania zadaniami</p>
-        <p class="lead">Zrealizowana w ramach kursu TARR Java 1</p>
+        <h1>Witaj w aplikacji do zarządzania zadaniami</h1>
+        <p class="lead">Aplikacja stworzona w ramach szkolenia TARR Java 1</p>
     </div>
 </header>
 
@@ -44,22 +44,24 @@
 <div class="row">
     <div class="col" style="padding: 15px">
         <h3>Zadania</h3>
-
         <table class="todoTable" id="todos-table">
             <tbody>
             <tr th:each="todo: ${todos}">
-                <td th:text="${todo.name}" />
+                <td>
+                    <input type="checkbox" value="" />
+                    <input type="hidden" th:value="${todo.id}" />
+                </td>
+                <td class="todo-name" th:text="${todo.name}" />
             </tr>
             </tbody>
         </table>
     </div>
     <div class="col" style="padding: 15px">
         <h3>Zadania wykonane</h3>
-        <table class="todoTable">
+        <table class="todoTable" id="done-items">
             <tbody>
             <tr th:each="todo: ${completed}">
                 <td th:text="${todo.name}" />
-                <td th:text="${todo.closeDate}" />
             </tr>
             </tbody>
         </table>
@@ -69,7 +71,7 @@
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        <p class="m-0 text-center text-white">Copyright &copy; TARR Java 1</p>
     </div>
     <!-- /.container -->
 </footer>
@@ -83,6 +85,7 @@
 
 <!-- Custom JavaScript for this theme -->
 <script src="js/scrolling-nav.js"></script>
+
 <script src="js/todo.js"></script>
 
 </body>

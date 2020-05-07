@@ -12,4 +12,6 @@ public interface TodoService {
     List<Todo> getAllCompleted();
 
     Todo addTodo(String name);
+
+    void completeTodo(Long id);
 }
