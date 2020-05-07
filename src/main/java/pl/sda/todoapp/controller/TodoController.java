@@ -16,6 +16,7 @@ import pl.sda.todoapp.mapper.TodoMapper;
 import pl.sda.todoapp.model.TodoDto;
 import pl.sda.todoapp.service.TodoService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
