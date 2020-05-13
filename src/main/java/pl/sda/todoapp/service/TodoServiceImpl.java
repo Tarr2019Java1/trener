@@ -3,7 +3,9 @@ package pl.sda.todoapp.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.sda.todoapp.entity.Todo;
+import pl.sda.todoapp.entity.User;
 import pl.sda.todoapp.repository.TodoRepository;
+import pl.sda.todoapp.repository.UserRepository;
 
 import java.util.List;
 
@@ -13,6 +15,9 @@ public class TodoServiceImpl implements TodoService {
     @Autowired
     private TodoRepository todoRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
 //    @Autowired
 //    public TodoServiceImpl(TodoRepository todoRepository) {
 //        this.todoRepository = todoRepository;
@@ -20,12 +25,12 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public List<Todo> getAll() {
-        return todoRepository.getAllByCompleted(false);
+        return todoRepository.getAllByCompletedAndUserId(false, getCurrentUser().getId());
     }
 
     @Override
     public List<Todo> getAllCompleted() {
-        return todoRepository.getAllByCompleted(true);
+        return todoRepository.getAllByCompletedAndUserId(true, getCurrentUser().getId());
     }
 
     @Override
@@ -42,5 +47,9 @@ public class TodoServiceImpl implements TodoService {
             todo.setCompleted(true);
             todoRepository.save(todo);
         }
+    }
+
+    private User getCurrentUser() {
+        return userRepository.findByUsername("jnowak");
     }
 }

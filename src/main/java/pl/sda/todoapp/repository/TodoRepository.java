@@ -8,7 +8,9 @@ import java.util.List;
 
 public interface TodoRepository extends JpaRepository<Todo, Long> {
 
-    List<Todo> getAllByCompleted(boolean completed);
+    // List<Todo> getAllByCompleted(boolean completed);
+
+    List<Todo> getAllByCompletedAndUserId(boolean complated, Long Id);
 
     Todo getById(Long id);
 }

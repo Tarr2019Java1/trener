@@ -21,6 +21,10 @@ public class Todo {
     @Temporal(TemporalType.DATE)
     private Date closeDate;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Todo() {
         createDate = new Date();
     }
@@ -66,5 +70,13 @@ public class Todo {
 
     public Date getCloseDate() {
         return closeDate;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
