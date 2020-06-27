@@ -10,6 +10,9 @@ public class MainController {
     @RequestMapping("/index")
     public String index(Model model) {
 
+
+        // jakaś zmiana
+
         return "index";
     }
 }
