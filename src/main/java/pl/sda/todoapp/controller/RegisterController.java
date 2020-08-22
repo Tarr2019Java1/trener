@@ -17,6 +17,8 @@ import pl.sda.todoapp.entity.User;
 import pl.sda.todoapp.model.UserDto;
 import pl.sda.todoapp.repository.UserRepository;
 
+import javax.validation.Valid;
+
 @Controller
 public class RegisterController {
 

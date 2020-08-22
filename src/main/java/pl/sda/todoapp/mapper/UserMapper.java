@@ -14,4 +14,12 @@ public class UserMapper {
 
         return dto;
     }
+
+    public static void mapToEntity(String username, String firstname, String lastname) {
+
+        User user = new User();
+        user.setLastName(lastname);
+        user.setUsername(username);
+        user.setFirstName(firstname);
+    }
 }
